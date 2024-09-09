@@ -18,6 +18,18 @@ function setup() {
   gallery.addVisual(new PayGapByJob2017());
   gallery.addVisual(new PayGapTimeSeries());
   gallery.addVisual(new ClimateChange());
+  gallery.addVisual(new UkFoosAttitudes());
+  gallery.addVisual(new NutrientsTimeSeries());
+  // Assistance from Course Material
+  gallery.addVisual(new PokemonStats());
+  // End of code
+
+  //Scroll down the canvas in Pokémon page
+  c.mouseWheel(function(event) {
+    if (gallery.selectedVisual != null && gallery.selectedVisual.hasOwnProperty('mouseWheel')) {
+      gallery.selectedVisual.mouseWheel(event);
+    }
+  });
 }
 
 function draw() {
